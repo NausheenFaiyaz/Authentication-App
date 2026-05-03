@@ -17,11 +17,9 @@ It also includes:
 
 ---
 
-## Live Project Goal
+## Live Demo
 
-Build and submit:
-1. A hosted working app link
-2. A public GitHub repository link
+Deployed app: https://freeauthstudio.onrender.com/
 
 ---
 
@@ -231,4 +229,3 @@ You can deploy this as a Node app (not static-only) because it includes `server.
 ## Author
 
 Built as part of FreeAPI authentication project practice.
-
