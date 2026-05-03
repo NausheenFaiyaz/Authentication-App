@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth Studio | FreeAPI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="app-layout">
+        <section class="auth-card">
+          <div class="card-noise" aria-hidden="true"></div>
+
+          <header class="hero">
+            <p class="eyebrow">FreeAPI Authentication App</p>
+            <h1 id="heroTitle">Welcome,<br />sign in to continue</h1>
+            <p id="statusText" class="status-text">Ready to connect.</p>
+          </header>
+
+          <div class="tab-row" role="tablist" aria-label="Auth Forms">
+            <button class="tab-button is-active" data-tab="login" role="tab" aria-selected="true">
+              Login
+            </button>
+            <button class="tab-button" data-tab="register" role="tab" aria-selected="false">
+              Register
+            </button>
+          </div>
+
+          <section class="form-panel" id="loginPanel">
+            <form id="loginForm" class="auth-form">
+            <label class="field-label" for="loginUsername">Username</label>
+            <input id="loginUsername" name="username" type="text" required placeholder="doejohn" />
+            <p class="field-hint">Use lowercase letters, numbers, and underscore only.</p>
+
+              <label class="field-label" for="loginPassword">Password</label>
+              <input id="loginPassword" name="password" type="password" required placeholder="test@123" />
+
+              <button id="loginButton" class="action-button" type="submit">
+                <span>Login</span>
+                <span class="arrow">-></span>
+              </button>
+            </form>
+          </section>
+
+          <section class="form-panel hidden" id="registerPanel">
+            <form id="registerForm" class="auth-form">
+              <label class="field-label" for="registerEmail">Email</label>
+              <input
+                id="registerEmail"
+                name="email"
+                type="email"
+                required
+                placeholder="user.email@domain.com"
+              />
+
+            <label class="field-label" for="registerUsername">Username</label>
+            <input id="registerUsername" name="username" type="text" required placeholder="doejohn" />
+            <p class="field-hint">Use lowercase letters, numbers, and underscore only.</p>
+
+              <label class="field-label" for="registerPassword">Password</label>
+              <input
+                id="registerPassword"
+                name="password"
+                type="password"
+                required
+                placeholder="test@123"
+              />
+
+              <label class="field-label" for="registerRole">Role</label>
+              <select id="registerRole" name="role" required>
+                <option value="ADMIN">ADMIN</option>
+                <option value="USER">USER</option>
+              </select>
+
+              <button id="registerButton" class="action-button" type="submit">
+                <span>Create account</span>
+                <span class="arrow">-></span>
+              </button>
+            </form>
+          </section>
+
+          <p id="messageBox" class="message-box" aria-live="polite"></p>
+        </section>
+
+        <section id="profileCard" class="profile-card">
+          <div class="profile-header">
+            <h2>Current User</h2>
+            <button id="refreshUserButton" class="mini-button" type="button">Refresh</button>
+          </div>
+          <pre id="userOutput">No active session yet.</pre>
+          <button id="logoutButton" class="logout-button" type="button">Logout</button>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

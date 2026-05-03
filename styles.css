@@ -1,0 +1,273 @@
+:root {
+  --bg: #8cc4da;
+  --paper: #e6e5d2;
+  --ink: #132026;
+  --ink-soft: #4b5e66;
+  --danger: #8f2c1c;
+  --success: #1f6a3a;
+  --outline: #0b1216;
+  --shadow: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  /* background-color: var(--paper); */
+  background:
+    radial-gradient(circle at 20% 10%, #b2e2f5 0%, transparent 35%),
+    radial-gradient(circle at 85% 90%, #9cd3e9 0%, transparent 35%),
+    linear-gradient(145deg, #8ecae1, #8ac7dd 45%, #9fd9ee);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.app-layout {
+  width: min(980px, 100%);
+  display: grid;
+  gap: 18px;
+  align-items: start;
+}
+
+.auth-card {
+  position: relative;
+  width: 100%;
+  border: 3px solid var(--outline);
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--bg) 90%, white 10%);
+  padding: 24px;
+  box-shadow: 8px 8px 0 var(--shadow);
+  overflow: hidden;
+}
+
+.card-noise {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 5px 5px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero,
+.form-panel,
+.tab-row,
+.message-box {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+h1 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  line-height: 1.05;
+  font-size: clamp(22px, 5vw, 34px);
+}
+
+.status-text {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+}
+
+.tab-row {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.tab-button {
+  border: 3px solid var(--outline);
+  border-radius: 10px;
+  background: transparent;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+.tab-button.is-active {
+  background: var(--paper);
+}
+
+.form-panel {
+  margin-top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.auth-form {
+  display: grid;
+  gap: 5px;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.field-hint {
+  margin: -2px 0 2px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+input,
+select {
+  width: 100%;
+  border: 3px solid var(--outline);
+  border-radius: 8px;
+  padding: 13px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+input::placeholder {
+  color: #6a6a64;
+}
+
+.action-button,
+.logout-button,
+.mini-button {
+  border: 3px solid var(--outline);
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: 4px 4px 0 var(--shadow);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.action-button {
+  margin-top: 6px;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  font-size: 20px;
+  font-family: "Fraunces", serif;
+}
+
+.arrow {
+  transition: transform 180ms ease;
+}
+
+.action-button:hover .arrow {
+  transform: translateX(3px);
+}
+
+.message-box {
+  margin: 16px 0 0;
+  min-height: 24px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.message-box.success {
+  color: var(--success);
+}
+
+.message-box.error {
+  color: var(--danger);
+}
+
+.profile-card {
+  background: #d7ecf4;
+  border: 3px solid var(--outline);
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.mini-button {
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+pre {
+  margin: 10px 0;
+  padding: 12px;
+  background: #eff6f8;
+  border: 2px solid var(--outline);
+  border-radius: 8px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 120px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+
+.logout-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.action-button:disabled,
+.logout-button:disabled,
+.mini-button:disabled,
+.tab-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 18px;
+  }
+
+  input,
+  select {
+    font-size: 15px;
+  }
+
+  .action-button {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  .app-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
